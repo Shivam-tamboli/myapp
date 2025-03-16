@@ -12,3 +12,7 @@ def about(request):
 def part(request):
     print("This is from part function")
     return HttpResponse("<h1>This is from part side</h1>")
+
+def services(request):
+    print("Services are running")
+    return HttpResponse("<h1>This is from services side</h1>")
