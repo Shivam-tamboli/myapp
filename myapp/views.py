@@ -41,5 +41,5 @@ def part(request):
 
 def services(request):
     print("Services are running")
-    # return HttpResponse("<h1>This is from services side</h1>")
+    # return HttpResponse("<h1>This is from services side</h1>").
     return render(request,"services.html",{})
