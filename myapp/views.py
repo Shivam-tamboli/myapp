@@ -3,6 +3,11 @@ from datetime import datetime
 from django.shortcuts import render
 
 def home(request):
+    
+    if request.method=='POST': 
+        check=request.GET['check']
+        print(check)
+    
     date = datetime.now()
     # sending data dynamically to the client.
     isActive=True
