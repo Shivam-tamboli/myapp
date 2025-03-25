@@ -5,7 +5,7 @@ from django.shortcuts import render
 def home(request):
     
     if request.method=='POST': 
-        check=request.GET['check']
+        check=request.POST.get('check', '')
         print(check)
     
     date = datetime.now()
