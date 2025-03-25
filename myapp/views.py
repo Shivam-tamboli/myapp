@@ -3,14 +3,19 @@ from datetime import datetime
 from django.shortcuts import render
 
 def home(request):
-    
+    isActive=True
     if request.method=='POST': 
-        check=request.POST.get('check', '')
-        print(check)
+        check=request.POST.get('check')
+        print(f"Checkbox value: {check}") 
+        if check is None:
+            isActive=False
+        else: 
+            isActive=True
+
     
     date = datetime.now()
     # sending data dynamically to the client.
-    isActive=True
+    
     name="Shivam Tamboli"
     list_of_program=[
         'WAP to print even and odd numbers',
