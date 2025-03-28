@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
                 ('college', models.CharField(max_length=200)),
                 ('age', models.IntegerField(max_length=100)),
                 ('is_active', models.BooleanField(default=False)),
-            ],
-        ),
+            ]
+        )
     ]
