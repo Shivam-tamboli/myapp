@@ -1,4 +1,6 @@
 from django.db import models
+from myapp.models import Student
+#from django.db import models
 
 # Create your models here.
 class Student(models.Model): #in parameter passed parent class so it can use the features of parent class.
