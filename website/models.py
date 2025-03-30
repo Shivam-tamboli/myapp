@@ -4,5 +4,5 @@ from django.db import models
 class Student(models.Model): #in parameter passed parent class so it can use the features of parent class.
     name=models.CharField(max_length=200)
     college=models.CharField(max_length=200)
-    age=models.IntegerField(max_length=100)
+    age=models.IntegerField()
     is_active=models.BooleanField(default=False)
