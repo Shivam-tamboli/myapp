@@ -25,5 +25,6 @@ urlpatterns = [
     path("",home),
     path("about/",about),
     path("part/",part),
-    path("services/",services)
+    path("services/",services),
+    path("student/",include('emp.urls'))
 ]
