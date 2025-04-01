@@ -1,6 +1,6 @@
 from django.db import models
 
-class Emp(models.Models):
+class Emp(models.Model):
     name=models.CharField(max_length=200)
     emp_id=models.CharField(max_length=100)
     phone=models.CharField(max_length=10)
