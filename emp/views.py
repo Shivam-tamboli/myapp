@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def student_home(request):
+def emp_home(request):
     return HttpResponse("student home page")
