@@ -20,5 +20,6 @@ from .views import emp_home
 
 
 urlpatterns = [
-    path("home/", emp_home)
+    path("home/", emp_home),
+    path("add-emp/", add_emp)
 ]
