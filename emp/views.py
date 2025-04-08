@@ -4,7 +4,11 @@ from .models import Emp
 
 # Create your views here.
 def emp_home(request):
-    return render(request, "emp/home.html",{})
+    
+    emps=Emp.objects.all()
+    return render(request, "emp/home.html",{
+    'emps':emps           
+    })
 
 def add_emp(request):
     if request.method == "POST":
