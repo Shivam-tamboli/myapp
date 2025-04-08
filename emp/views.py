@@ -13,13 +13,14 @@ def add_emp(request):
         emp_phone = request.POST.get("emp_phone")
         emp_address = request.POST.get("emp_address")
         emp_working = request.POST.get("emp_working")
-        emp_departent = request.POST.get("emp_departent")
+        emp_department = request.POST.get("emp_department")
 
         e = Emp()
         e.name = emp_name
+        e.emp_id = emp_id
         e.phone = emp_phone
         e.address = emp_address
-        e.department = emp_departent
+        e.department = emp_department
         e.working = bool(emp_working)  # handles True/False
         
         e.save()
