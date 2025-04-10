@@ -3,15 +3,55 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welcome to our Website</title>
-    <meta name="description" content="">
+    <title>Django Basics | Learning Project</title>
+    <meta name="description" content="Learning Basic Django: Sending Data and Rendering Templates">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #f4f6f9;
             margin: 0;
             padding: 0;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid #2980b9;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header p {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #bdc3c7;
+        }
+
+        nav {
+            background-color: #34495e;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
         }
 
         .container {
@@ -23,22 +63,8 @@
             border-radius: 10px;
         }
 
-        h1, h2, h3 {
+        h2, h3 {
             color: #2c3e50;
-        }
-
-        h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 20px;
-        }
-
-        h3 {
-            font-size: 18px;
-            color: #34495e;
         }
 
         p {
@@ -83,35 +109,45 @@
             font-size: 20px;
             color: #8e44ad;
         }
-
     </style>
 </head>
 <body>
-    <div class="container" style="text-align: center">
-        {'{% include "navbar.html" %}'}
+    <header class="header">
+        <h1>Learning Basic Django</h1>
+        <p>Sending Data, Forms, and Template Rendering</p>
+    </header>
 
-        <h1>This is our official Website</h1>
+    {% comment %} <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav> {% endcomment %}
+
+    <div class="container" style="text-align: center">
+        {% include "navbar.html" %}
+
+        <h2>Welcome to our Learning Project</h2>
 
         <form action="/index/" method="POST">
             {% csrf_token %}
-            <input type="checkbox" value="True" name="check">
-            <button>Send</button>
+            {% comment %} <input type="checkbox" value="True" name="check">
+            <button>Send</button> {% endcomment %}
         </form>
 
-        <p>Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while still keeping the original meaning. The purpose here is to just get the writing started so that when the writer goes onto their day's writing projects, words are already flowing from their fingers.</p>
-        <button>Contact Us</button>
+        <p>First, we’re learning the basics of Django such as sending data, handling forms, and template rendering. These concepts are essential to build a solid foundation in web development using Django. Once you are confident with the basics, we will move towards creating a fully functional Employee Management System from scratch.</p>
 
         {% if isActive %}
         <div>
-            <h2>Todays date is <strong>{{date}}</strong></h2>
-            <h1>Name is <strong>{{name}}</strong></h1>
+            <h2>Today's date is <strong>{{date}}</strong></h2>
+            <h2>Name is <strong>{{name}}</strong></h2>
 
             <hr>
 
-            <div class="section-title">Student data</div>
-            <h2>Student name : {{ Student.Student_name }}</h2>
-            <h2>Student college : {{ Student.Student_college }}</h2>
-            <h2>Student city : {{ Student.Student_city }}</h2>
+            <div class="section-title">Student Data</div>
+            <h3>Student name : {{ Student.Student_name }}</h3>
+            <h3>Student college : {{ Student.Student_college }}</h3>
+            <h3>Student city : {{ Student.Student_city }}</h3>
 
             <hr>
 
@@ -122,7 +158,5 @@
         </div>
         {% endif %}
     </div>
-
-    <script src="" async defer></script>
 </body>
 </html>
