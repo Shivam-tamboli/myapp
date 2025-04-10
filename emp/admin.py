@@ -1,5 +1,13 @@
 from django.contrib import admin
 from .models import Emp
 
+
+class EmpAdmin(admin.ModelAdmin):
+    list_display=('name','working','emp_id','phone')
+    list_editable=('working','emp_id')
+    search_fields=('name','phone')
+    list_filter=('working',)
+
+
 # Register your models here.
-admin.site.register(Emp)
+admin.site.register(Emp, EmpAdmin)
