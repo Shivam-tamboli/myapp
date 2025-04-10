@@ -1,15 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Welcome to our Website</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-      <div class="container" style="text-align: center">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to our Website</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #34495e;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1f618d;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 20px;
+            color: #8e44ad;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" style="text-align: center">
         {'{% include "navbar.html" %}'}
 
         <h1>This is our official Website</h1>
@@ -22,31 +100,29 @@
 
         <p>Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while still keeping the original meaning. The purpose here is to just get the writing started so that when the writer goes onto their day's writing projects, words are already flowing from their fingers.</p>
         <button>Contact Us</button>
-    
+
         {% if isActive %}
-        <!--accesing dynamic data-->
         <div>
-            <h2>Todays date is {{date}}</h2>
-        <h1>Name is {{name}}</h1>
-        <hr>
-        <h1>Student data</h1>
-        <h2>Student name : {{ Student.Student_name }}</h2>
-        <h2>Student college : {{ Student.Student_college }}</h2>
-        <h2>Student city : {{ Student.Student_city }}</h2>
+            <h2>Todays date is <strong>{{date}}</strong></h2>
+            <h1>Name is <strong>{{name}}</strong></h1>
 
-        <hr>
+            <hr>
 
-        <h1>Favorite Programs</h1>
+            <div class="section-title">Student data</div>
+            <h2>Student name : {{ Student.Student_name }}</h2>
+            <h2>Student college : {{ Student.Student_college }}</h2>
+            <h2>Student city : {{ Student.Student_city }}</h2>
 
-        {% for p in list_of_program %}
+            <hr>
 
-            <h3>{{p}}</h3>
-
-        {%  endfor %}
+            <div class="section-title">Favorite Programs</div>
+            {% for p in list_of_program %}
+                <h3>{{p}}</h3>
+            {% endfor %}
         </div>
         {% endif %}
-        <div/>
+    </div>
 
-        <script src="" async defer></script>
-    </body>
+    <script src="" async defer></script>
+</body>
 </html>
